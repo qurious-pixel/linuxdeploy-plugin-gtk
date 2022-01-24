@@ -190,7 +190,8 @@ else
     tempdir_template=/tmp/.ld-p-gtk-tmp-XXXXXX
 fi
 
-export CACHEDIR="$(mktemp -d "$tempdir_template")"
+CACHEDIR="$(mktemp -d "$tempdir_template")"
+export "$CACHEDIR"
 
 export APPDIR="${APPDIR:-"$(dirname "$(realpath "$0")")"}" # Workaround to run extracted AppImage
 export GTK_DATA_PREFIX="$APPDIR"
